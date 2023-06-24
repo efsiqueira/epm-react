@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBsT0S5F68CEsdS8Pllw2j4StDz-iQV56k",
-  authDomain: "appregistro5f.firebaseapp.com",
-  projectId: "appregistro5f",
-  storageBucket: "appregistro5f.appspot.com",
-  messagingSenderId: "1023499054233",
-  appId: "1:1023499054233:web:81458117ba54a954bfdc08"
+  apiKey: "AIzaSyA_kQ71-VeRKxQ6w46leeMga3Nojlte_wY",
+  authDomain: "appregistro-e3289.firebaseapp.com",
+  projectId: "appregistro-e3289",
+  storageBucket: "appregistro-e3289.appspot.com",
+  messagingSenderId: "59934219221",
+  appId: "1:59934219221:web:f9dea66a849a0ad180bb5c",
 };
 
 // Lembre-se de exportar as variáveis 

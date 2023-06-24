@@ -10,11 +10,11 @@ export default function RegisterScreen() {
   const [telefone, setTelefone] = useState("");
 
   // variável de CEP
-  const [cep, setCep] = useState("");
-  const [endereco, setEndereco] = useState("");
-  const [cidade, setCidade] = useState("");
-  const [estado, setEstado] = useState("");
-  const [bairro, setBairro] = useState("");
+  // const [cep, setCep] = useState("");
+  // const [endereco, setEndereco] = useState("");
+  // const [cidade, setCidade] = useState("");
+  // const [estado, setEstado] = useState("");
+  // const [bairro, setBairro] = useState("");
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -23,12 +23,12 @@ export default function RegisterScreen() {
   const [error, setError] = useState(
     {
       padrao: false,
-      cep: false,
-      endereco: false,
-      cidade: false,
-      estado: false,
-      bairro: false,
-      telefone: false,
+      // cep: false,
+      // endereco: false,
+      // cidade: false,
+      // estado: false,
+      // bairro: false,
+      // telefone: false,
       email: false,
       senha: false,
       confirmarSenha: false,
@@ -76,12 +76,12 @@ export default function RegisterScreen() {
 
         const dadosParaInserir = {
           nomeDaPessoa: nome,
-          telefoneDaPessoa: telefone,
-          cepDaPessoa: cep,
-          enderecoDaPessoa: endereco,
-          cidadeDaPessoa: cidade,
-          estadoDaPessoa: estado,
-          bairroDaPessoa: bairro,
+          // telefoneDaPessoa: telefone,
+          // cepDaPessoa: cep,
+          // enderecoDaPessoa: endereco,
+          // cidadeDaPessoa: cidade,
+          // estadoDaPessoa: estado,
+          // bairroDaPessoa: bairro,
           emailDaPessoa: email,
           userUID: userUID
         }
@@ -158,7 +158,7 @@ export default function RegisterScreen() {
           style={styles.maxWidth}
         />
       </View>
-      <View>
+      {/* <View>
         {error.cep && <HelperText type="error">{error.cep}</HelperText>}
         <TextInput
           mode="outlined"
@@ -224,7 +224,7 @@ export default function RegisterScreen() {
           onChangeText={setTelefone}
           style={styles.maxWidth}
         />
-      </View>
+      </View> */}
       <View>
         {error.email && <HelperText type="error">{error.email}</HelperText>}
         <TextInput
