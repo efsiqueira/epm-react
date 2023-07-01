@@ -33,7 +33,7 @@ export default function SplashScreen({ navigation }) {
     <View style={styles.container}>
       {/* Aqui temos uma imagem simbolizando o Logotipo do App */}
       <Image
-        source={{ uri: "https://picsum.photos/200" }}
+        source={require('../../assets/logo.png')}
         // Também é possível utilizar imagens locais, neste caso note sobre
         // as barras duplas e o uso de require para alcançar a pasta assets
         // source={require("../../assets/icon.png")}
