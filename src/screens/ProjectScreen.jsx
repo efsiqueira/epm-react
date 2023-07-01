@@ -8,7 +8,6 @@ export default function ProjectScreen() {
 		<View
 			style={
 				{
-					// backgroundColor: "#121212",
 					flex: 1,
 					alignSelf: 'stretch',
 					justifyContent: 'space-between'

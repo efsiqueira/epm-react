@@ -7,14 +7,6 @@ import { auth, db } from "../config/firebase";
 import styles from "../utils/styles";
 export default function RegisterScreen() {
   const [nome, setNome] = useState("");
-  const [telefone, setTelefone] = useState("");
-
-  // variável de CEP
-  // const [cep, setCep] = useState("");
-  // const [endereco, setEndereco] = useState("");
-  // const [cidade, setCidade] = useState("");
-  // const [estado, setEstado] = useState("");
-  // const [bairro, setBairro] = useState("");
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -23,34 +15,11 @@ export default function RegisterScreen() {
   const [error, setError] = useState(
     {
       padrao: false,
-      // cep: false,
-      // endereco: false,
-      // cidade: false,
-      // estado: false,
-      // bairro: false,
-      // telefone: false,
       email: false,
       senha: false,
       confirmarSenha: false,
     }
   );
-
-  function handleCep() {
-    setError("");
-    fetch(`https://viacep.com.br/ws/${cep}/json/`)
-      .then((response) => (response.json()))
-      .then((data) => {
-        setBairro(data.bairro);
-        setEstado(data.uf);
-        setCidade(data.localidade);
-        setEndereco(data.logradouro);
-        console.log(endereco)
-      })
-      .catch((error) => {
-        console.log("Erro: ", error)
-        setError("CEP Inválido");
-      })
-  }
 
   function handleRegister() {
     console.log("Registrando usuário");
@@ -76,12 +45,6 @@ export default function RegisterScreen() {
 
         const dadosParaInserir = {
           nomeDaPessoa: nome,
-          // telefoneDaPessoa: telefone,
-          // cepDaPessoa: cep,
-          // enderecoDaPessoa: endereco,
-          // cidadeDaPessoa: cidade,
-          // estadoDaPessoa: estado,
-          // bairroDaPessoa: bairro,
           emailDaPessoa: email,
           userUID: userUID
         }
@@ -155,7 +118,9 @@ export default function RegisterScreen() {
           placeholder="Digite seu nome"
           value={nome}
           onChangeText={setNome}
-          style={styles.maxWidth}
+          style={[styles.maxWidth, { backgroundColor: "#FFF" }]}
+          placeholderTextColor={"#5e8f87"}
+          textColor="#5e8f87"
         />
       </View>
       {/* <View>
@@ -232,7 +197,9 @@ export default function RegisterScreen() {
           placeholder="Digite seu e-mail"
           value={email}
           onChangeText={setEmail}
-          style={styles.maxWidth}
+          style={[styles.maxWidth, { backgroundColor: "#FFF" }]}
+          placeholderTextColor={"#5e8f87"}
+          textColor="#5e8f87"
         />
       </View>
       <View style={{ marginTop: 10 }}>
@@ -243,13 +210,16 @@ export default function RegisterScreen() {
           value={senha}
           onChangeText={setSenha}
           secureTextEntry={passwordVisible}
-          style={styles.maxWidth}
+          style={[styles.maxWidth, { backgroundColor: "#FFF" }]}
+          placeholderTextColor={"#5e8f87"}
+          textColor="#5e8f87"
           right={
             <TextInput.Icon
               icon={passwordVisible ? "eye" : "eye-off"}
               size={20}
               style={{ marginRight: 10 }}
               onPress={() => setPasswordVisible(!passwordVisible)}
+              iconColor="#5e8f87"
             />
           }
         />
@@ -261,7 +231,9 @@ export default function RegisterScreen() {
           value={confirmarSenha}
           onChangeText={setConfirmarSenha}
           secureTextEntry={passwordVisible}
-          style={styles.maxWidth}
+          style={[styles.maxWidth, { backgroundColor: "#FFF" }]}
+          placeholderTextColor={"#5e8f87"}
+          textColor="#5e8f87"
           right={
             <TextInput.Icon
               icon={passwordVisible ? "eye" : "eye-off"}

@@ -63,34 +63,39 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Paragraph>Faça o seu Login</Paragraph>
+      <Paragraph style={{ color: "#5e8f87", fontWeight: "bold", fontSize: "24" }}>Faça o seu Login</Paragraph>
       <HelperText type="error"> {error} </HelperText>
       <View style={styles.maxWidth}>
-        <Paragraph>E-mail</Paragraph>
+        <Paragraph style={{ color: "#5e8f87" }}>E-mail</Paragraph>
 
           <TextInput
             mode="outlined"
             placeholder="Digite seu e-mail"
             value={email}
             onChangeText={setEmail}
-            style={styles.maxWidth}
+            style={[styles.maxWidth, { backgroundColor: "#fff" }]}
+            placeholderTextColor={"#5e8f87"}
+            textColor="#5e8f87"
           />
       </View>
       <View style={styles.maxWidth}>
-        <Paragraph>Senha</Paragraph>
+        <Paragraph style={{ color: "#5e8f87" }}>Senha</Paragraph>
         <TextInput
           mode="outlined"
           placeholder="Digite sua Senha"
           value={senha}
           onChangeText={setSenha}
           secureTextEntry={passwordVisible}
-          style={styles.maxWidth}
+          style={[styles.maxWidth, { backgroundColor: "#fff" }]}
+          placeholderTextColor={"#5e8f87"}
+          textColor="#5e8f87"
           right={
             <TextInput.Icon
               icon={passwordVisible ? "eye" : "eye-off"}
               size={20}
               style={{ marginRight: 10 }}
               onPress={() => setPasswordVisible(!passwordVisible)}
+              iconColor="#5e8f87"
             />
           }
         />
