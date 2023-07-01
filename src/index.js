@@ -2,13 +2,13 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { NavigationContainer, useTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import SplashScreen from "./screens/SplashScreen";
-import ContactScreen from "./screens/ContactScreen";
+import AboutScreen from "./screens/AboutScreen";
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import SignOut from "./screens/SignOut";
 import UserProfile from "./screens/UserProfile";
-import TarefasScreen from "./screens/TarefasScreen";
+import ProjectScreen from "./screens/ProjectScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +57,7 @@ export function MBTNavigation() {
   return (
     <MTB.Navigator
       tabBarOptions={{
-        activeTintColor: "#fff",
+        activeTintColor: "#121212",
         labelStyle: { fontSize: 8, fontWeight: "bold" },
 
       }}
@@ -66,24 +66,24 @@ export function MBTNavigation() {
         name="HomeScreen"
         component={HomeScreen}
         options={{
-          tabBarIcon: "android",
+          tabBarIcon: "home",
 
           title: "Inicio",
         }}
       />
       <MTB.Screen
-        name="ContactScreen"
-        component={ContactScreen}
+        name="AboutScreen"
+        component={AboutScreen}
         options={{
-          title: "Contato",
-          tabBarIcon: "phone-in-talk",
+          title: "Sobre",
+          tabBarIcon: "album",
         }}
       />
       <MTB.Screen
-        name="Tarefas"
-        component={TarefasScreen}
+        name="Projetos"
+        component={ProjectScreen}
         options={{
-          title: "Tarefas",
+          title: "Projetos",
           tabBarIcon: "format-list-bulleted",
         }}
       />
