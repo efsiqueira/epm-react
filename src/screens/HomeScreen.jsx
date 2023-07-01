@@ -72,15 +72,25 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      <Text
+        style={
+          {
+            ...styles.textCenter,
+            fontWeight: 'bold',
+            marginBottom: 20,
+            color: "rgb(94, 143, 135)",
+            fontSize: 30
+          }
+        }
+        variant="titleLarge"
+      >Sistema EPM</Text>
       <View>
         <Image
-          source={{
-            uri: "https://picsum.photos/300/300",
-          }}
+          source={require('../../assets/logo.png')}
           style={styles.image}
         />
       </View>
-      <Text>Hola {user?.nomeDaPessoa}, bem vindo ao meu app</Text>
+      <Text>Olá, {user?.nomeDaPessoa}.</Text>
       <Aviso />
     </View>
   );
@@ -89,8 +99,8 @@ export default function HomeScreen() {
 // é um componente em React Native
 function Aviso() {
   return (
-    <View style={{ backgroundColor: "yellow" }}>
-      <Text>Oi eu sou um aviso!</Text>
+    <View>
+      <Text></Text>
     </View>
   );
 }
