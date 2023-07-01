@@ -22,6 +22,18 @@ export default function AboutScreen() {
     <View
       style={styles.container}
     >
+      <Text
+        style={
+          {
+            ...styles.textCenter,
+            fontWeight: 'bold',
+            marginBottom: 20,
+            color: "rgb(94, 143, 135)",
+            fontSize: 24
+          }
+        }
+          variant="titleLarge"
+        >Sobre o Sistema EPM</Text>
       <Text style={styles.text}>Olá, {nomeDaPessoa}. Quer saber um pouco mais sobre o nosso sistema?</Text>
       <Text style={styles.text}>Somos um sistema de código aberto, idealizado no curso de Análise e Desenvolvimento de Sistemas do Senac Joinville. Nosso propósito é auxiliar os alunos e coordenadores no envio e análise dos dados de curricularização da extensão, que é o novo modelo de extensão. Para isso, consultamos e analisamos a opinião de diversas pessoas interessadas no assunto, e o resultado é o aplicativo que você está utilizando agora. Espero que aproveite e caso tenha algum feedback, entre em contato com a gente! Espero que sua experiência seja a melhor possível.</Text>
     </View>
