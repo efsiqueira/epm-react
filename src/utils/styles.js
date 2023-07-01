@@ -38,7 +38,16 @@ const styles = StyleSheet.create({
   textCenter: {
     textAlign: "center",
 
-  }
+  },
+  text: {
+    width: "70%",
+    fontSize: 16,
+    lineHeight: 24,
+    marginHorizontal: 20,
+    marginTop: 20,
+    textAlign: 'center',
+    justifyContent: 'center',
+  },
 });
 
 export default styles;
