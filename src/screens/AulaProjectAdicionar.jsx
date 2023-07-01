@@ -5,21 +5,21 @@ import { Text, TextInput } from "react-native-paper"
 import { db } from "../config/firebase"
 import styles from "../utils/styles"
 
-export default function AulaTasksAdicionar() {
-    const [tarefa, setTarefa] = useState('')
+export default function AulaProjectAdicionar() {
+    const [projeto, setProjeto] = useState('')
 
-    const tarefasRef = collection(db, "tarefas")
+    const projetosRef = collection(db, "tarefas")
 
-    function handleAddTask() {
-        console.log(tarefa)
+    function handleAddProject() {
+        console.log(projeto)
         const data = {
-            nomeDaTarefa: tarefa
+            nomeDaTarefa: projeto
         }
 
-        addDoc(tarefasRef, data)
+        addDoc(projetosRef, data)
             .then((docRef) => {
-                console.log("Tarefa Adicionar com a ID: ", docRef.id)
-                setTarefa('')
+                console.log("Projeto Adicionar com a ID: ", docRef.id)
+                setProjeto('')
             })
             .catch(
                 (error) => console.log(error)
@@ -31,18 +31,18 @@ export default function AulaTasksAdicionar() {
             style={styles.containerInner}
         >
             <TextInput
-                label="Tarefa"
+                label="Projeto"
                 mode="outlined"
-                value={tarefa}
-                onChangeText={setTarefa}
+                value={projeto}
+                onChangeText={setProjeto}
                 right={
                     <TextInput.Icon
                         icon="plus"
                         size={28}
-                        onPress={handleAddTask}
+                        color="#5e8f87"
+                        onPress={handleAddProject}
                     />
                 }
-                
             />
         </View>
     )

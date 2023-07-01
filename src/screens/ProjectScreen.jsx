@@ -1,6 +1,6 @@
 import { ScrollView, View } from "react-native";
-import AulaTaskListar from "./AulaTaskListar";
-import AulaTasksAdicionar from "./AulaTaskAdicionar";
+import AulaProjectListar from "./AulaProjectListar";
+import AulaProjectAdicionar from "./AulaProjectAdicionar";
 import styles from "../utils/styles";
 
 export default function ProjectScreen() {
@@ -8,6 +8,7 @@ export default function ProjectScreen() {
 		<View
 			style={
 				{
+					// backgroundColor: "#121212",
 					flex: 1,
 					alignSelf: 'stretch',
 					justifyContent: 'space-between'
@@ -15,12 +16,12 @@ export default function ProjectScreen() {
 			}
 		>
 			<ScrollView>
-				<AulaTaskListar />
+				<AulaProjectListar />
 			</ScrollView>
 			<View
 				style={{ flexBasis: 90 }}
 			>
-				<AulaTasksAdicionar
+				<AulaProjectAdicionar
 
 				/>
 			</View>

@@ -4,40 +4,40 @@ import { FlatList, View } from "react-native";
 import { Text, TextInput } from "react-native-paper";
 import { db } from "../config/firebase";
 
-export default function AulaTaskBuscar({ routes, navigation }) {
+export default function AulaProjectBuscar({ routes, navigation }) {
     const [busca, setBusca] = useState("");
-    const [resultadoTarefas, setResultadoTarefas] = useState([]);
+    const [resultadoProjetos, setResultadoProjetos] = useState([]);
 
-    async function buscarTarefa() {
+    async function buscarProjeto() {
         try {
-            const tarefasRef = collection(db, 'tarefas')
-            const queryTarefas = query(
-                tarefasRef,
+            const projetosRef = collection(db, 'tarefas')
+            const queryProjetos = query(
+                projetosRef,
                 where('nomeDaTarefa', '>=', busca),
                 where('nomeDaTarefa', '<=', busca + "\uf8ff")
             )
-            const querySnapshot = await getDocs(queryTarefas)
-            const tarefas = querySnapshot.docs.map(doc => doc.data())
-            setResultadoTarefas(tarefas)
+            const querySnapshot = await getDocs(queryProjetos)
+            const projetos = querySnapshot.docs.map(doc => doc.data())
+            setResultadoProjetos(projetos)
 
         } catch (error) { console.log(error); }
     }
 
     useEffect(() => {
-        buscarTarefa();
+        buscarProjeto();
         console.log(busca)
     }, [busca])
 
     return (
         <View>
-            <Text>Buscar Tarefa</Text>
+            <Text>Buscar Projeto</Text>
             <TextInput
                 label="Buscar"
                 value={busca}
                 onChangeText={setBusca}
             />
             <FlatList
-                data={resultadoTarefas}
+                data={resultadoProjetos}
                 renderItem={({ item }) => (
                     <Text id={item.id}>{item.nomeDaTarefa}</Text>
                 )}

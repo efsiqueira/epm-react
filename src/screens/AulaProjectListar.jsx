@@ -4,32 +4,26 @@ import { useEffect, useState } from "react";
 import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore";
 import { List, Text, TouchableRipple } from "react-native-paper";
 
-export default function AulaTaskListar() {
-    const [tarefas, setTarefas] = useState([]);
+export default function AulaProjectListar() {
+    const [projetos, setProjetos] = useState([]);
 
-    const tarefasRef = collection(db, "tarefas")
+    const projetosRef = collection(db, "tarefas")
 
     useEffect(() => {
 
-        const q = query(tarefasRef)
+        const q = query(projetosRef)
         const unsubscribe = onSnapshot(
-            q, // primeiro parametro que é a query da colecao
-            (querySnapshot) => { // segundo paramatro é quem se responsabiliza pelo dados ao vivo
-                // criei uma constante que vai um array de objetos
-                // o map vai percorrer cada documento e vai retornar um objeto
-                const listaDeTarefas = querySnapshot.docs.map(
-                    // funcao responsável por construir o objeto que eu desejo
+            q,
+            (querySnapshot) => {
+                const listaDeProjetos = querySnapshot.docs.map(
                     (doc) => (
                         {
-                            // primeiramente eu pego a id do documento
                             id: doc.id,
-                            // e depois eu pego os dados do documento
                             ...doc.data()
                         }
                     )
                 )
-                // e por fim eu seto o estado com a lista de tarefas
-                setTarefas(listaDeTarefas)
+                setProjetos(listaDeProjetos)
             }
         )
         return () => unsubscribe()
@@ -46,11 +40,10 @@ export default function AulaTaskListar() {
     return (
         <ScrollView>
             <FlatList
-                data={tarefas}
+                data={projetos}
                 renderItem={({ item }) => (
                     <List.Item
-                        title={item.nomeDaTarefa}
-                        description={"Descricao da tarefa acima"}
+                        title={<Text style={{ color: "#5e8f87" }}>{item.nomeDaTarefa}</Text>}
                         onPress={() => console.log("Pressionado")}
                         right={(props) => (
                             <TouchableRipple
@@ -60,6 +53,7 @@ export default function AulaTaskListar() {
                                     {...props}
                                     icon="delete"
                                     size={28}
+                                    color="#5e8f87"
                                 />
                             </TouchableRipple>
                         )}
